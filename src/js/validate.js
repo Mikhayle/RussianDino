@@ -2,7 +2,7 @@ const validate = document.querySelector('.js-validate')
 if (validate) {
   if (validate) {
     const validation = new JustValidate(validate)
-    validation.addField('#user-mail', [
+    validation.addField('#recipient_email', [
       {
         rule: 'required',
         errorMessage: 'Электронная почта обязательна',
