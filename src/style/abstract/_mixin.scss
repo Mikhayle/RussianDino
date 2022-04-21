@@ -1,0 +1,160 @@
+@mixin transition {
+  transition: all .4s ease-in-out
+}
+
+@mixin img {
+  background-repeat  : no-repeat;
+  background-size    : cover;
+  background-position: center;
+}
+
+
+@mixin btn($padding, $font-size, $line-height) {}
+
+@mixin header($font-size, $line-height) {
+  font-family: CormorantSC;
+  font-style : normal;
+  font-weight: bold;
+  font-size  : $font-size;
+  line-height: $line-height;
+}
+
+@mixin text($font-size, $line-height) {
+  font-family: Roboto;
+  font-style : normal;
+  font-weight: 400;
+  font-size  : $font-size;
+  line-height: $line-height;
+
+}
+
+@mixin title {
+  font-family: CormorantSC;
+  font-style : normal;
+  font-weight: bold;
+  font-size  : 24px;
+  line-height: 29px;
+
+  @media (min-width: 450px) {
+    font-size  : 30px;
+    line-height: 35px;
+  }
+
+  @media (min-width: 768px) {
+    font-size  : 36px;
+    line-height: 42px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size  : 40px;
+    line-height: 48px;
+  }
+}
+
+@mixin title-order {
+  font-family: CormorantSC;
+  font-style : normal;
+  font-weight: 300;
+  font-size  : 16px;
+  line-height: 19px;
+
+  @media (min-width: 450px) {
+    font-size: 18px;
+  }
+
+  @media (min-width: 768px) {
+    font-size : 20px;
+    margin-top: 7px;
+  }
+}
+
+@mixin svg($height, $width, $fill) {
+  position: absolute;
+  fill    : $fill;
+  height  : $height;
+  width   : $width;
+  z-index : 20;
+  cursor  : pointer
+}
+
+@mixin center {
+  position    : absolute;
+  top         : 50%;
+  left        : 50%;
+  margin-right: -50%;
+  transform   : translate(-50%, -50%);
+}
+
+@mixin button($padding) {
+  font-size    : 16px;
+  max-width    : 214px;
+  display      : block;
+  background   : $dark-blue;
+  color        : $light-grey;
+  padding      : $padding;
+  border-radius: 8px;
+  outline      : transparent;
+  cursor: pointer;
+  @include transition;
+
+  &:hover:not(:focus-visible) {
+    background-color: $very-dark-blue;
+    @include transition;
+  }
+
+  &:focus-visible {
+    background-color: $blue;
+    @include transition;
+  }
+
+  &:active:not(:focus-visible) {
+    background-color: $blue;
+    @include transition;
+  }
+
+  &:disabled:not(:focus-visible) {
+    background-color: $grey;
+  }
+}
+
+@mixin hr {
+  position        : absolute;
+  content         : '';
+  width           : 100%;
+  height          : 1px;
+  background-color: $dark-blue;
+  opacity         : 0.2;
+}
+
+@mixin burger {
+  position  : absolute;
+  content   : '';
+  height    : 2px;
+  background: $dark-blue;
+  width     : 24px;
+}
+@mixin svg-contacts($width,$height, $fill) {
+  fill    : $fill;
+  width   : $width;
+  height  : $height;
+}
+@mixin input{
+  width        : 100%;
+  padding      : 16px;
+  border-radius: 8px;
+  border       : 1px solid $dark-blue;
+
+  &::placeholder {
+    color: $form;
+    @include text(14px, 165%)
+  }
+}
+@mixin inner-input{
+  position : relative;
+  max-width: 272px;
+  width    : 100%;
+
+  @media (min-width: 768px) {
+    max-width: 450px;
+  }
+}

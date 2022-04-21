@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+'header':'Русский Динозавр - Главная страница'
+})
+
+<body class="body">
+   @@include('html/monstera.html')
+   @@include('html/lettering.html',{
+    'art-content':'#art-content',
+    'portfolio':'#portfolio',
+    'specialist':'#specialist',
+    'about':'#about',
+    'contacts':'#contacts'
+
+  })
+
+    <div class="wrapper">
+     @@include('html/menu.html',{
+    'art-content':'#art-content',
+    'portfolio':'#portfolio',
+    'specialist':'#specialist',
+    'about':'#about',
+    'contacts':'#contacts'
+
+     })
+     @@include('html/content.html')
+     @@include('html/art-content.html')
+     @@include('html/video.html')
+     @@include('html/portfolio.html')
+     @@include('html/about.html')
+     @@include('html/projects.html')
+     @@include('html/work.html')
+     @@include('html/specialist.html')
+     @@include('html/new-offers.html')
+     @@include('html/contacts.html')
+     @@include('html/footer.html')
+     @@include('html/modal.html')
+
+    </div>
+
+
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js?v=38"></script>
+  <script src="js/zenscroll-min.js"></script>
+  <script src="js/app.js?v=33"></script>
+</body>
+
+</html>

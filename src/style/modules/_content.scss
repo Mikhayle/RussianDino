@@ -1,0 +1,46 @@
+.content {
+  position: relative;
+  height: 130px;
+
+  @media (min-width: 1024px) {
+    height: 281px;
+  }
+
+  @media (min-width: 1300px) {
+    height: 331px;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__bgvideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+  }
+
+  &__description {
+    @include header(16px, 130%);
+    color: $light-grey;
+
+    @media (min-width: 450px) {
+      @include header(22px, 140%);
+    }
+
+    @media (min-width: 768px) {
+      @include header(32px, 150%);
+    }
+
+    @media (min-width: 1024px) {
+      @include header(40px, 165%);
+    }
+
+  }
+}

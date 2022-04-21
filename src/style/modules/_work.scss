@@ -1,0 +1,39 @@
+.work {
+  position   : relative;
+  padding-top: 56px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 90px;
+    padding-top: 90px;
+
+    &::before {
+      @include hr;
+      bottom: 0px;
+      left  : 0;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__title-order {
+    @include title-order
+  }
+
+  &__swiper-one,
+  &__swiper-two {
+    margin-top: 30px;
+    width     : 100%;
+    height    : auto;
+  }
+  &__swiper-slide-one,
+  &__swiper-slide-two{
+    width: 150px;
+    height: auto;
+  }
+}
+.swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+          transition-timing-function: linear !important;
+}

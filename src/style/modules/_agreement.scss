@@ -1,0 +1,48 @@
+.agreement {
+  margin-top: 56px;
+  position: relative;
+  @media (min-width: 1024px) {
+      padding-bottom: 90px;
+      padding-top: 90px;
+
+        &::before {
+          @include hr;
+          bottom: 0px;
+          left  : 0;
+      }
+    }
+
+  &__title {
+    font-weight: 700;
+    font-size  : 24px;
+    line-height: 29px;
+    color      : $dark;
+
+    @media (min-width: 768px) {
+      font-size  : 32px;
+      line-height: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      font-size  : 40px;
+      line-height: 48px;
+    }
+  }
+
+  &__header {
+    font-family: 'Roboto';
+    margin-top : 32px;
+    font-weight: 700;
+    font-size  : 20px;
+    line-height: 165%;
+    color      : $black;
+  }
+
+  .__text {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size  : 16px;
+    line-height: 26px;
+    color      : $black;
+  }
+}

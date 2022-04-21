@@ -1,0 +1,17 @@
+.footer {
+padding: 30px 0;
+
+  h2 {
+    font-weight: 500;
+    font-size  : 12px;
+    line-height: 130%;
+    color      : $dark;
+    text-align : center;
+
+    @media (min-width: 768px) {
+      font-size  : 20px;
+      line-height: 165%;
+      text-align : left;
+    }
+  }
+}

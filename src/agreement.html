@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/head.html',{
+'header':'Русский Динозавр - Соглашение на обработку персональных данных'
+})
+
+<body class="body">
+   @@include('html/monstera.html')
+   @@include('html/lettering.html',{
+    'art-content':'index.html#art-content',
+    'portfolio':'index.html#portfolio',
+    'about':'http://nd.tw-team.com/#about',
+    'contacts':'index.html#contacts'
+
+  })
+
+
+    <div class="wrapper">
+     @@include('html/menu.html',{
+      'art-content':'http://nd.tw-team.com/#art-content',
+      'portfolio':'http://nd.tw-team.com/#portfolio',
+      'about':'http://nd.tw-team.com/#about',
+      'specialist':'http://nd.tw-team.com/#specialis',
+      'contacts':'http://nd.tw-team.com/#contacts'
+
+    })
+
+     @@include('html/agreements.html')
+     @@include('html/footer.html')
+
+    </div>
+
+
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/zenscroll-min.js"></script>
+    <script src="js/app.js?v=27"></script>
+  </body>
+
+  </html>

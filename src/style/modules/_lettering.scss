@@ -1,0 +1,110 @@
+.lettering {
+  position: relative;
+
+  @media (min-width: 768px) {
+    padding-top: 50px;
+  }
+
+  &__inner {
+    padding        : 32px 24px 0;
+    display        : flex;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display         : none;
+    position        : absolute;
+    background-color: $dark-blue;
+    padding         : 100px 24px 24px 24px;
+    width           : 70%;
+    height          : calc(100vh);
+    height          : calc(var(--vh, 1vh) * 100);
+    text-align      : right;
+    z-index         : 1;
+    top             : 0;
+    right           : 0;
+
+    &.active {
+      display  : block;
+      animation: menu 0.7s ease-in-out;
+    }
+  }
+
+  &__svg {
+    width : 22px;
+    height: 48px;
+    fill  : $dark-blue;
+  }
+
+  &__item {
+    margin-bottom: 32px;
+  }
+
+  &__link {
+    color: $light-grey;
+  }
+
+  &__phone {
+    position: absolute;
+    bottom  : 10%;
+    right   : 24px;
+  }
+
+  &__svg-phone {
+    width : 23px;
+    height: 30px;
+    fill  : $light-grey;
+
+    @media (min-width: 768px) {
+      width: 30px;
+    }
+  }
+
+  &__burger {
+    position: absolute;
+    right   : 24px;
+    top     : 42px;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__photo {
+    img {
+      margin : 0 auto;
+      display: block;
+      width  : 50%;
+
+      @media (min-width: 768px) {
+        width: 70%;
+      }
+
+      @media (min-width: 1024px) {
+        width: auto;
+      }
+    }
+  }
+}
+
+@media (max-height: 300px) {
+  .lettering__list {
+    width     : 100%;
+    text-align: left;
+  }
+
+  .lettering__item {
+    display: inline-block;
+    margin : 10px;
+  }
+
+  .lettering__phone {
+    position   : static;
+    display    : inline-block;
+    margin-left: 35px;
+  }
+}

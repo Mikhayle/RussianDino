@@ -1,0 +1,160 @@
+.portfolio {
+  position    : relative;
+  padding-top : 56px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 90px;
+    padding-top: 90px;
+
+    &::before {
+      @include hr;
+      bottom: 0px;
+      left  : 0;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding-top: 80px;
+  }
+
+  @media (min-width: 1920px) {
+    padding-top: 75px;
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__title-order {
+    @include title-order
+  }
+}
+
+.portfolio-swiper-slide-one {
+  &__info {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-start;
+
+    @media (min-width: 1024px) {
+  margin: 5px 0 23px;
+    }
+  }
+
+  &__text:first-child {
+    width: 100%;
+    @include text(16px, 33px);
+    color: $dark-blue;
+
+    @media (min-width: 768px) {
+      width: 70%;
+      @include text(20px, 33px);
+    }
+  }
+
+  &__text:last-child {
+    display: none;
+    width  : 30%;
+    text-align: right;
+
+    @media (min-width: 768px) {
+      display: block;
+      @include text(20px, 33px);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.portfolio-swiper-one,
+.portfolio-swiper-two {
+  margin-top: 30px;
+  padding-left: 25px;
+  width: 100%;
+  height    : auto;
+  cursor    : pointer;
+}
+
+.portfolio-swiper-slide-two {
+  &__info {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : flex-start;
+
+    @media (min-width: 1024px) {
+      margin: 5px 0 23px;
+    }
+  }
+
+  &__text:first-child {
+    width: 100%;
+    @include text(16px,33px);
+    color: $dark-blue;
+
+    @media (min-width: 768px) {
+      width: 70%;
+      @include text(20px, 33px);
+    }
+  }
+
+  &__text:last-child {
+    display: none;
+    width  : 30%;
+    text-align: right;
+
+    @media (min-width: 768px) {
+      display: block;
+      @include text(20px, 33px);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+
+
+.portfolio-button {
+  margin-top: 10px;
+
+  &__next {
+    @include svg(18px, 20px, $blue);
+    transform: rotate(180deg);
+    right    : 15px;
+    @media (min-width: 1024px) {
+      right    : 32px;
+    }
+    @media (min-width: 1300px) {
+      right    : 118px;
+    }
+    @media (min-width: 1920px) {
+      right    : 250px;
+    }
+  }
+
+  &__prev {
+    @include svg(18px, 20px, $blue);
+    left: 15px;
+    @media (min-width: 1024px) {
+      left: 32px;
+    }
+    @media (min-width: 1300px) {
+      left: 118px;
+    }
+    @media (min-width: 1920px) {
+      left: 250px;
+    }
+  }
+
+  &__svg-prev {
+    @include svg(18px, 20px, $blue);
+  }
+
+  &__svg-next {
+    @include svg(18px, 20px, $blue);
+  }
+}
+

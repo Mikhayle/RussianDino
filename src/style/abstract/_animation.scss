@@ -1,0 +1,36 @@
+.element-animation {
+  opacity: 1;
+  @media (min-width: 1000px) {
+    opacity: 0;
+  } 
+}
+
+.element-animation.element-show {
+  transform: translateX(-15px);
+  opacity   : 1;
+  transition: opacity 3s;
+  animation : element-show  3s;
+}
+
+@keyframes element-show  {
+  0% {
+    transform: translateX(180px);
+    padding-left: 30px;
+    width: 70%;
+  }
+}
+@keyframes menu {
+  0% {
+    opacity  : 0;
+    transform: scale(.8)
+  }
+
+  50% {
+    opacity: .5
+  }
+
+  100% {
+    opacity  : 1;
+    transform: scale(1)
+  }
+}

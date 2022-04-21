@@ -1,0 +1,265 @@
+.contacts {
+  position      : relative;
+  padding-top   : 56px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 90px;
+    padding-top: 90px;
+
+    &::before {
+      @include hr;
+      bottom: 0px;
+      left  : 0;
+    }
+  }
+
+  &__title {
+    @include title;
+  }
+
+  &__title-order {
+    @include title-order
+  }
+
+  &__inner {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+
+    @media (min-width: 768px) {
+      margin: 30px auto 0;
+      padding       : 0 24px;
+      max-width     : 768px;
+      flex-direction: row;
+      align-items: normal;
+      gap: 30px;
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 930px;
+      padding  : 0;
+    }
+
+    @media (min-width: 1920px) {
+      max-width: 1050px;
+      padding  : 0;
+    }
+  }
+}
+
+.contacts-info {
+  width           : 100%;
+  background-color: $dark-blue;
+  margin-top      : 30px;
+
+  @media (min-width: 768px) {
+    width: 70%;
+    margin: 0;
+  }
+  @media (min-width: 768px) {
+    width: 48.4%;
+  }
+  &__logo {
+    margin-top     : 30px;
+    display        : flex;
+    justify-content: center;
+  }
+
+  address {
+    margin-top    : 30px;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    gap           : 16px;
+
+  }
+
+  &__link {
+    font-family: 'Roboto';
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 16px;
+    line-height: 19px;
+    color      : $light-grey;
+  }
+
+  &__svg {
+    @include svg-contacts(22px, 44px, $light-grey);
+    @media (min-width: 768px) {
+      @include svg-contacts(40px, 80px, $light-grey);
+    }
+  }
+
+  &__social {
+    max-width      : 270px;
+    display        : flex;
+    margin         : 20px auto;
+    align-items    : center;
+    justify-content: space-between;
+    gap            : 27px;
+
+    // @media (min-width: 450px) {
+    //   max-width: 450px;
+    // }
+  }
+
+  &__fb {
+    @include svg-contacts(22px, 22px, $light-grey)
+  }
+
+  &__vk {
+    @include svg-contacts(22px, 22px, $light-grey)
+  }
+
+  &__ya {
+    @include svg-contacts(27px, 27px, $light-grey)
+  }
+
+  &__tl {
+    @include svg-contacts(21px, 18px, $light-grey)
+  }
+
+  &__insta {
+    @include svg-contacts(22px, 22px, $light-grey)
+  }
+}
+
+.feedback-container {
+  position : relative;
+  max-width: 320px;
+  margin   : 32px auto 0;
+  padding  : 0 24px;
+
+  @media (min-width: 450px) {
+    max-width: 450px;
+    padding: 0;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0;
+  }
+
+  h3 {
+    width      : 100%;
+    font-weight: 400;
+    font-size  : 16px;
+    line-height: 130%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      width: 52%;
+      text-align: left;
+    }
+    @media (min-width: 1024px) {
+      width: 100%;
+    }
+  }
+}
+
+.feedback {
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  @media (min-width: 768px) {
+    align-items: start;
+  }
+
+  &__inner {
+    margin-top: 20px;
+    @include inner-input;
+  }
+
+  &__input {
+    @include input;
+  }
+
+  &__btn {
+    @include button(16px 64px);
+    max-width: 272px;
+
+    @media (min-width: 450px) {
+      margin-top: 25px;
+    }
+
+    @media (min-width: 768px) {
+      @include button(16px 36px);
+      max-width: 216px;
+    }
+  }
+}
+
+.feedback-consent {
+  position  : relative;
+  display   : flex;
+  margin-top: 20px;
+  gap       : 6px;
+  max-width: 272px;
+
+  @media (min-width: 768px) {
+    margin-left: 2px;
+    margin-top : 39px;
+    width: 100%;
+    align-items: center;
+    max-width: 450px;
+  }
+  // @media (min-width: 1024px) {
+    padding-top: 5px;
+  // }
+
+  span {
+    @include text (12px, 130%);
+    color: $dark;
+     @media (min-width: 1024px) {
+      padding-top: 5px;
+      }
+
+
+    a {
+      color     : $blue;
+      font-style: italic;
+    }
+  }
+}
+
+.feedback-details {
+  cursor: pointer;
+
+  &__span {
+    margin-top: 2px;
+    position      : relative;
+    display       : inline-block;
+    width         : 20px;
+    height        : 20px;
+    outline       : 1px solid $dark-blue;
+    vertical-align: text-top;
+
+    &:before {
+      content  : '\2713';
+      display  : inline-block;
+      position : absolute;
+      left     : 50%;
+      top      : 50%;
+      color    : $light-grey;
+      transform: translate(-50%, -50%) scale(0);
+      @include transition;
+      z-index: 12;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    width   : 0;
+    height  : 0;
+    opacity : 0;
+    z-index : -1;
+
+    &:checked+.feedback-details__span {
+      background-color: $dark-blue;
+    }
+
+    &:checked+.feedback-details__span::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+}
