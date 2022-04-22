@@ -2892,7 +2892,7 @@ iframe {
 }
 @media (min-width: 768px) {
   .footer h2 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 165%;
     text-align: left;
   }
