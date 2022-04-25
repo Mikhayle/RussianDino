@@ -17,19 +17,20 @@
 
   &__list {
     display         : none;
-    position        : absolute;
+    position        : fixed;
     background-color: $dark-blue;
     padding         : 100px 24px 24px 24px;
     width           : 70%;
-    height          : calc(100vh);
-    height          : calc(var(--vh, 1vh) * 100);
+    height          : 100vh;
     text-align      : right;
     z-index         : 1;
     top             : 0;
     right           : 0;
 
     &.active {
-      display  : block;
+      display  : flex;
+			flex-direction: column;
+			align-items: center;
       animation: menu 0.7s ease-in-out;
     }
   }
@@ -91,7 +92,7 @@
   }
 }
 
-@media (max-height: 300px) {
+@media (max-height: 400px) {
   .lettering__list {
     width     : 100%;
     text-align: left;
@@ -100,11 +101,5 @@
   .lettering__item {
     display: inline-block;
     margin : 10px;
-  }
-
-  .lettering__phone {
-    position   : static;
-    display    : inline-block;
-    margin-left: 35px;
   }
 }

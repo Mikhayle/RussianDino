@@ -92,20 +92,48 @@
   }
 }
 
+.projects__cart:not(:focus-visible) {
+  .projects__svg {
+    svg {
+			transition: transform .3s ease-in-out;
+			-webkit-transition: transform .3s ease-in-out;
+    }
+  }
+
+  .projects__img {
+		transition: transform .3s ease-in-out;
+			-webkit-transition: transform .3s ease-in-out;
+  }
+
+  .projects__info {
+		transition: transform .3s ease-in-out;
+			-webkit-transition: transform .3s ease-in-out;
+  }
+}
+
 .projects__cart:hover:not(:focus-visible) {
   .projects__svg {
     svg {
       fill     : $very-dark-blue;
       transform: scale(1.1);
+			-webkit-transform: scale(1.1);
+			transition: transform .3s ease-in-out;
+			-webkit-transition: transform .3s ease-in-out;
     }
   }
 
   .projects__img {
     transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+		transition: transform .3s ease-in-out;
+			-webkit-transition: transform .3s ease-in-out;
   }
 
   .projects__info {
     transform: translateX(5px);
+		-webkit-transform: translateX(5px);
+		transition: transform .3s ease-in-out;
+			-webkit-transition: transform .3s ease-in-out;
   }
 }
 

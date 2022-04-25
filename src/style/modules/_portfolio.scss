@@ -123,13 +123,7 @@
   &__next {
     @include svg(18px, 20px, $blue);
     transform: rotate(180deg);
-    right    : 15px;
-    @media (min-width: 1024px) {
-      right    : 32px;
-    }
-    @media (min-width: 1300px) {
-      right    : 118px;
-    }
+    right    : 25px;
     @media (min-width: 1920px) {
       right    : 250px;
     }
@@ -137,13 +131,7 @@
 
   &__prev {
     @include svg(18px, 20px, $blue);
-    left: 15px;
-    @media (min-width: 1024px) {
-      left: 32px;
-    }
-    @media (min-width: 1300px) {
-      left: 118px;
-    }
+    left: 25px;    
     @media (min-width: 1920px) {
       left: 250px;
     }

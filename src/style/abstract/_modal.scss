@@ -1,5 +1,4 @@
 .modal {
-  --transition-time: .7s;
   position         : fixed;
   left             : 0;
   top              : 0;
@@ -14,13 +13,16 @@
   background-color : rgba($black, 0.7);
   opacity          : 0;
   visibility       : hidden;
-  transition       : opacity var(--transition-time), visibility var(--transition-time);
+  transition       : opacity .7s ease-in-out, visibility .7s ease-in-out;
+	-webkit-transition       : opacity .7s ease-in-out, visibility .7s ease-in-out;
   z-index          : 250;
 }
 
 .modal.is-open {
   opacity   : 1;
+	-webkit-opacity   : 1;
   visibility: visible;
+	-webkit-visibility: visible;
 }
 
 .disable-scroll {
@@ -37,22 +39,32 @@
 .fadeInUp {
   opacity   : 0;
   transform: scale(0.9);
-  transition: var(--transition-time);
+	-webkit-transform: scale(0.9);
+  transition: transform .7s ease-in-out, opacity .7s ease-in-out;
+	-webkit-transition: transform .7s ease-in-out, opacity .7s ease-in-out;
 }
 
 .fadeInUp.animate-open {
   opacity   : 1;
   transform: scale(1);
-  transition: var(--transition-time);
+  -webkit-transform: scale(1);
+	transition: transform .7s ease-in-out, opacity .7s ease-in-out;
+  -webkit-transition: transform .7s ease-in-out, opacity .7s ease-in-out;
 }
 @media (max-height: 600px) {
   .fadeInUp.animate-open {
     transform: translateY(25%);
+		-webkit-transform: translateY(25%);
+		transition: transform .3s ease-in-out;
+		-webkit-transition: transform .3s ease-in-out
   }
 }
 @media (max-height: 400px) {
   .fadeInUp.animate-open {
     transform: translateY(50%);
+		-webkit-transform: translateY(50%);
+		transition: transform .3s ease-in-out;
+		-webkit-transition: transform .3s ease-in-out
   }
 }
 .modal-close {
@@ -80,6 +92,7 @@
 
   &::after {
     transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
   }
 }
 

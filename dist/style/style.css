@@ -296,16 +296,16 @@ address {
   position: relative;
   max-width: 320px;
   margin: 0 auto;
-  padding: 0 24px;
 }
-@media (min-width: 450px) {
+@media (min-width: 480px) {
   .container {
-    max-width: 450px;
+    max-width: 480px;
   }
 }
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
+    padding: 0 24px;
   }
 }
 @media (min-width: 1024px) {
@@ -408,7 +408,6 @@ address {
   }
 }
 .modal {
-  --transition-time: .7s;
   position: fixed;
   left: 0;
   top: 0;
@@ -423,13 +422,16 @@ address {
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition-time), visibility var(--transition-time);
+  transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+  -webkit-transition: opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
   z-index: 250;
 }
 
 .modal.is-open {
   opacity: 1;
+  -webkit-opacity: 1;
   visibility: visible;
+  -webkit-visibility: visible;
 }
 
 .disable-scroll {
@@ -445,23 +447,33 @@ address {
 .fadeInUp {
   opacity: 0;
   transform: scale(0.9);
-  transition: var(--transition-time);
+  -webkit-transform: scale(0.9);
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  -webkit-transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
 }
 
 .fadeInUp.animate-open {
   opacity: 1;
   transform: scale(1);
-  transition: var(--transition-time);
+  -webkit-transform: scale(1);
+  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  -webkit-transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
 }
 
 @media (max-height: 600px) {
   .fadeInUp.animate-open {
     transform: translateY(25%);
+    -webkit-transform: translateY(25%);
+    transition: transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
   }
 }
 @media (max-height: 400px) {
   .fadeInUp.animate-open {
     transform: translateY(50%);
+    -webkit-transform: translateY(50%);
+    transition: transform 0.3s ease-in-out;
+    -webkit-transition: transform 0.3s ease-in-out;
   }
 }
 .modal-close {
@@ -487,6 +499,7 @@ address {
 }
 .modal-close::after {
   transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .portfolio-modal-card.modal-open,
@@ -1158,19 +1171,20 @@ address {
 }
 .lettering__list {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: #013C55;
   padding: 100px 24px 24px 24px;
   width: 70%;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   text-align: right;
   z-index: 1;
   top: 0;
   right: 0;
 }
 .lettering__list.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation: menu 0.7s ease-in-out;
 }
 .lettering__svg {
@@ -1225,7 +1239,7 @@ address {
   }
 }
 
-@media (max-height: 300px) {
+@media (max-height: 400px) {
   .lettering__list {
     width: 100%;
     text-align: left;
@@ -1234,12 +1248,6 @@ address {
   .lettering__item {
     display: inline-block;
     margin: 10px;
-  }
-
-  .lettering__phone {
-    position: static;
-    display: inline-block;
-    margin-left: 35px;
   }
 }
 .menu-desktop {
@@ -1307,7 +1315,7 @@ address {
   position: relative;
   height: 130px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .content {
     height: 281px;
   }
@@ -1339,7 +1347,7 @@ address {
   line-height: 130%;
   color: #FCFCFC;
 }
-@media (min-width: 450px) {
+@media (min-width: 480px) {
   .content__description {
     font-family: CormorantSC;
     font-style: normal;
@@ -1368,7 +1376,6 @@ address {
 }
 
 .art-content {
-  padding-top: 56px;
   position: relative;
 }
 .art-content__header {
@@ -1776,17 +1783,7 @@ iframe {
   z-index: 20;
   cursor: pointer;
   transform: rotate(180deg);
-  right: 15px;
-}
-@media (min-width: 1024px) {
-  .portfolio-button__next {
-    right: 32px;
-  }
-}
-@media (min-width: 1300px) {
-  .portfolio-button__next {
-    right: 118px;
-  }
+  right: 25px;
 }
 @media (min-width: 1920px) {
   .portfolio-button__next {
@@ -1800,17 +1797,7 @@ iframe {
   width: 20px;
   z-index: 20;
   cursor: pointer;
-  left: 15px;
-}
-@media (min-width: 1024px) {
-  .portfolio-button__prev {
-    left: 32px;
-  }
-}
-@media (min-width: 1300px) {
-  .portfolio-button__prev {
-    left: 118px;
-  }
+  left: 25px;
 }
 @media (min-width: 1920px) {
   .portfolio-button__prev {
@@ -1835,6 +1822,7 @@ iframe {
 }
 
 .about {
+  pointer-events: none;
   padding-top: 56px;
   position: relative;
 }
@@ -2493,10 +2481,9 @@ iframe {
 .feedback-consent {
   position: relative;
   display: flex;
-  margin-top: 20px;
+  margin: 20px 0 20px;
   gap: 6px;
   max-width: 272px;
-  padding-top: 5px;
 }
 @media (min-width: 768px) {
   .feedback-consent {
@@ -2682,15 +2669,37 @@ iframe {
   cursor: pointer;
 }
 
+.projects__cart:not(:focus-visible) .projects__svg svg {
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+}
+.projects__cart:not(:focus-visible) .projects__img {
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+}
+.projects__cart:not(:focus-visible) .projects__info {
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+}
+
 .projects__cart:hover:not(:focus-visible) .projects__svg svg {
   fill: #002433;
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
 }
 .projects__cart:hover:not(:focus-visible) .projects__img {
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
 }
 .projects__cart:hover:not(:focus-visible) .projects__info {
   transform: translateX(5px);
+  -webkit-transform: translateX(5px);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
 }
 
 @media (min-width: 768px) {
@@ -2892,7 +2901,7 @@ iframe {
 }
 @media (min-width: 768px) {
   .footer h2 {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 165%;
     text-align: left;
   }
@@ -2953,6 +2962,7 @@ iframe {
 }
 
 .work {
+  pointer-events: none;
   position: relative;
   padding-top: 56px;
 }

@@ -2,7 +2,7 @@
   position: relative;
   height: 130px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     height: 281px;
   }
 
@@ -30,7 +30,7 @@
     @include header(16px, 130%);
     color: $light-grey;
 
-    @media (min-width: 450px) {
+    @media (min-width: 480px) {
       @include header(22px, 140%);
     }
 
