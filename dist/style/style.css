@@ -381,15 +381,18 @@ address {
 }
 
 .element-animation.element-show {
-  transform: translateX(-15px);
   opacity: 1;
+  -webkit-opacity: 1;
   transition: opacity 3s;
+  -webkit-transition: opacity 3s;
   animation: element-show 3s;
+  -webkit-animation: element-show 3s;
 }
 
 @keyframes element-show {
   0% {
     transform: translateX(180px);
+    -webkit-transform: translateX(180px);
     padding-left: 30px;
     width: 70%;
   }
@@ -397,7 +400,9 @@ address {
 @keyframes menu {
   0% {
     opacity: 0;
+    -webkit-opacity: 0;
     transform: scale(0.8);
+    -webkit-transform: scale(0.8);
   }
   50% {
     opacity: 0.5;
@@ -405,6 +410,7 @@ address {
   100% {
     opacity: 1;
     transform: scale(1);
+    -webkit-transform: scale(1);
   }
 }
 .modal {
@@ -456,32 +462,32 @@ address {
   opacity: 1;
   transform: scale(1);
   -webkit-transform: scale(1);
-  transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
-  -webkit-transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+  transition: transform 0.7s ease-in, opacity 0.7s ease-in;
+  -webkit-transition: transform 0.7s ease-in, opacity 0.7s ease-in;
 }
 
 @media (max-height: 600px) {
   .fadeInUp.animate-open {
     transform: translateY(25%);
     -webkit-transform: translateY(25%);
-    transition: transform 0.3s ease-in-out;
-    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in;
+    -webkit-transition: transform 0.3s ease-in;
   }
 }
 @media (max-height: 400px) {
   .fadeInUp.animate-open {
     transform: translateY(50%);
     -webkit-transform: translateY(50%);
-    transition: transform 0.3s ease-in-out;
-    -webkit-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in;
+    -webkit-transition: transform 0.3s ease-in;
   }
 }
 .modal-close {
   position: absolute;
   right: 7px;
   top: 7px;
-  width: 34px;
-  height: 34px;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
@@ -492,12 +498,38 @@ address {
   content: "";
   display: block;
   position: absolute;
-  left: 0;
+  left: 10px;
   right: 10px;
   border-bottom: 2px solid #FCFCFC;
   transform: rotate(45deg);
 }
 .modal-close::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.modal-close--black {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  outline: none;
+}
+.modal-close--black::before, .modal-close--black::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  border-bottom: 2px solid #013C55;
+  transform: rotate(45deg);
+}
+.modal-close--black::after {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -634,6 +666,7 @@ address {
     display: flex;
     justify-content: space-between;
     align-items: end;
+    -webkit-align-items: end;
   }
 }
 @media (min-width: 1024px) {
@@ -667,6 +700,7 @@ address {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
   font-family: Roboto;
   font-style: normal;
   font-weight: 400;
@@ -951,6 +985,113 @@ address {
   }
 }
 
+.footer-modal-card {
+  position: relative;
+  display: none;
+  width: 930px;
+  height: 423px;
+  background: #ffffff;
+  border: 1px solid #013C55;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding-top: 60px;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card {
+    width: 320px;
+    height: 373px;
+  }
+}
+.footer-modal-card.modal-open {
+  display: flex;
+}
+.footer-modal-card__title {
+  font-family: CormorantSC;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 165%;
+  color: #002433;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__title {
+    font-size: 20px;
+    line-height: 130%;
+    margin-bottom: 24px;
+  }
+}
+.footer-modal-card__content {
+  display: flex;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer-modal-card__spec-group {
+  display: flex;
+  flex-direction: column;
+}
+.footer-modal-card__spec-group:first-child {
+  margin-right: 100px;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__spec-group:first-child {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__spec-group {
+    align-items: center;
+  }
+}
+.footer-modal-card__group-title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 165%;
+  color: #002433;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__group-title {
+    font-size: 12px;
+    line-height: 130%;
+    margin-bottom: 8px;
+  }
+}
+.footer-modal-card__specialists-list {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__specialists-list {
+    align-items: center;
+  }
+}
+.footer-modal-card__specialist {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 165%;
+  color: #002433;
+}
+.footer-modal-card__specialist:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  .footer-modal-card__specialist {
+    font-size: 14px;
+    line-height: 130%;
+  }
+  .footer-modal-card__specialist:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
 .menu-burger {
   z-index: 10;
   cursor: pointer;
@@ -1186,6 +1327,7 @@ address {
   flex-direction: column;
   align-items: center;
   animation: menu 0.7s ease-in-out;
+  -webkit-animation: menu 0.7s ease-in-out;
 }
 .lettering__svg {
   width: 22px;
@@ -1343,7 +1485,7 @@ address {
   font-family: CormorantSC;
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 130%;
   color: #FCFCFC;
 }
@@ -1486,7 +1628,6 @@ address {
   .art-content-orders__info {
     width: 50%;
     height: 100%;
-    padding-left: 15px;
   }
 }
 .art-content-orders__title {
@@ -1783,7 +1924,7 @@ iframe {
   z-index: 20;
   cursor: pointer;
   transform: rotate(180deg);
-  right: 25px;
+  right: 105px;
 }
 @media (min-width: 1920px) {
   .portfolio-button__next {
@@ -1797,7 +1938,7 @@ iframe {
   width: 20px;
   z-index: 20;
   cursor: pointer;
-  left: 25px;
+  left: 105px;
 }
 @media (min-width: 1920px) {
   .portfolio-button__prev {
@@ -2799,7 +2940,7 @@ iframe {
     margin-top: 32px;
   }
   .specialist__img img {
-    object-position: 0px -150px;
+    object-position: 0px -120px;
   }
 }
 @media (min-width: 1024px) {
@@ -2893,17 +3034,89 @@ iframe {
   padding: 30px 0;
 }
 .footer h2 {
+  font-family: Cormorant SC;
   font-weight: 500;
   font-size: 12px;
   line-height: 130%;
   color: #38383F;
   text-align: center;
+  margin-bottom: 16px;
 }
 @media (min-width: 768px) {
   .footer h2 {
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 20px;
     line-height: 165%;
     text-align: left;
+    margin-bottom: 5px;
+  }
+}
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.footer__tag {
+  font-family: Cormorant SC;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 165%;
+  color: #38383F;
+}
+@media screen and (max-width: 768px) {
+  .footer__tag {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 130%;
+    margin-bottom: 24px;
+  }
+}
+.footer__btn-dev {
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 165%;
+  color: #013C55;
+  z-index: 0;
+  transition: color 0.2s ease-in-out;
+}
+.footer__btn-dev::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #013C55;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  transition: background-color 0.2s ease-in-out;
+}
+.footer__btn-dev:hover {
+  color: #002433;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.footer__btn-dev:hover::before {
+  background-color: #002433;
+  transition: background-color 0.2s ease-in-out;
+}
+.footer__btn-dev:active {
+  color: #004C6C;
+}
+.footer__btn-dev:active::before {
+  background-color: #004C6C;
+}
+@media screen and (max-width: 768px) {
+  .footer__btn-dev {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 165%;
   }
 }
 

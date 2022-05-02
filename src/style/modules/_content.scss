@@ -27,7 +27,7 @@
   }
 
   &__description {
-    @include header(16px, 130%);
+    @include header(15px, 130%);
     color: $light-grey;
 
     @media (min-width: 480px) {

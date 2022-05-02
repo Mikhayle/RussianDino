@@ -6,15 +6,18 @@
 }
 
 .element-animation.element-show {
-  transform: translateX(-15px);
   opacity   : 1;
+	-webkit-opacity: 1;
   transition: opacity 3s;
+	-webkit-transition: opacity 3s;
   animation : element-show  3s;
+	-webkit-animation: element-show  3s;
 }
 
 @keyframes element-show  {
   0% {
     transform: translateX(180px);
+		-webkit-transform: translateX(180px);
     padding-left: 30px;
     width: 70%;
   }
@@ -22,7 +25,9 @@
 @keyframes menu {
   0% {
     opacity  : 0;
-    transform: scale(.8)
+		-webkit-opacity  : 0;
+    transform: scale(.8);
+		-webkit-transform: scale(.8);
   }
 
   50% {
@@ -31,6 +36,7 @@
 
   100% {
     opacity  : 1;
-    transform: scale(1)
+    transform: scale(1);
+		-webkit-transform: scale(1);
   }
 }
