@@ -64,11 +64,12 @@
 
   &__info {
     position        : absolute;
-    width           : 45%;
+    width           : 52%;
     height      : calc(100% + 28px);
     background-color: $light-grey;
-    top             : -2px;
-    left            : -2px;
+    top             : 0;
+    left            : 0;
+		padding-left: 10px;
 
     @media (min-width: 1024px) {
       width       : 50%;

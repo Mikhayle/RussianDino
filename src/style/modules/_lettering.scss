@@ -16,7 +16,9 @@
   }
 
   &__list {
-    display         : none;
+    display         : flex;
+		flex-direction: column;
+		align-items: flex-end;
     position        : fixed;
     background-color: $dark-blue;
     padding         : 100px 24px 24px 24px;
@@ -26,13 +28,12 @@
     z-index         : 1;
     top             : 0;
     right           : 0;
-
+		transform: translateX(100%);
+		transition: transform 0.7s ease-in-out;
+		
     &.active {
-      display  : flex;
-			flex-direction: column;
-			align-items: center;
-      animation: menu 0.7s ease-in-out;
-			-webkit-animation: menu 0.7s ease-in-out;
+			transform: translateX(0);
+			transition: transform 0.7s ease-in-out;
     }
   }
 
@@ -52,8 +53,12 @@
 
   &__phone {
     position: absolute;
-    bottom  : 10%;
+    bottom  : 20%;
     right   : 24px;
+
+		@media screen and(max-width: 768px) and (orientation: landscape) {
+			right: 80%;
+		}
   }
 
   &__svg-phone {

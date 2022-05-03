@@ -112,7 +112,7 @@
     @include transition;
   }
 
-  &:disabled:not(:focus-visible) {
+  &:disabled {
     background-color: $grey;
   }
 }
